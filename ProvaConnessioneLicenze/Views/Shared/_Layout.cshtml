@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ProvaConnessioneLicenze</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+@*https://cdn.wallpapersafari.com/69/48/HDrnj0.jpg*@
+@*https://www.wallpaperflare.com/static/809/659/580/minimalism-techno-tatof-abstract-wallpaper.jpg*@
+@*https://img.wallpapersafari.com/desktop/1680/1050/51/82/RP4fIq.jpg*@
+@*https://wallpapercave.com/wp/wp5154156.jpg*@
+@*https://cdn.wallpapersafari.com/63/4/qrvCh0.jpg*@
+@* style="background-color:white"*@
+
+<body style="background-image:url('https://www.wallpaperflare.com/static/809/659/580/minimalism-techno-tatof-abstract-wallpaper.jpg')">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light text-black border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand " asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-black" asp-area="" asp-controller="Customers" asp-action="Index"  style="color:black">CLIENTI</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-black" asp-area="" asp-controller="Licenses" asp-action="Index"  style="color:black">LICENZE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-black" asp-area="" asp-controller="Users" asp-action="Index"  style="color:black">USERS</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<html>
+<head>
+    <style>
+        body {
+            background: #f5f5f5;
+            color: #566787;
+            font-family: 'Roboto', sans-serif;
+        }
+        #c1 {
+            border-radius: 100px 100px 100px 100px;
+            height: 400px;
+            width:800px;
+            background:#ffffff
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <br /><br />
+          <div id="c1" class="container">
+              <div id="t1" class="text-center">
+                  <br /><br />
+                  <h1 class="display-4">Pannello di controllo</h1>
+                  <br />
+              </div>
+              <br /> <br />
+              <table align="center">
+                  <tr>
+                      <td class="col-sm-3 text-center">
+                          <a asp-action="Index" asp-controller="Customers" class="button"><p>
+                              <i class="fa fa-user fa-4x"></i></p>Elenco Clienti</a>
+                      </td>
+                      <td class="col-sm-3 text-center">
+                          <a asp-action="Index" asp-controller="Licenses" class="button"><p>
+                              <i class="fa fa-file fa-4x"></i></p>Elenco Licenze</a>
+                      </td>
+                  </tr>
+              </table>
+          </div>
+
+    @*
+
+            <div id="r1" class="row">
+                    <div class="col-sm-6 text-center">
+                        <a asp-action="Index" asp-controller="Customers" class="button"><p><i class="fa fa-user fa-4x"></i></p>Elenco clienti</a>
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        <a asp-action="Index" asp-controller="Licenses" class="button"><p><i class="fa fa-file fa-4x"></i></p>Licenze</a>
+                    </div>
+             </div>
+
+       
+    *@
+</body>
+</html>

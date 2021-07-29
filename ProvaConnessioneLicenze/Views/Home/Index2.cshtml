@@ -1,0 +1,122 @@
+﻿@model IEnumerable<ProvaConnessioneLicenze.Models.Customer>
+
+@{
+    ViewData["Title"] = "Clienti";
+}
+<html>
+<head>
+
+    <div class="row pt-md-4">
+        <div class="col-6">
+            <h2 class="text-black">LISTA DEI CLIENTI</h2>
+        </div>
+        @*<div class="col-6" text-right>
+                <a asp-action="Create" class="btn btn-primary">Crea Nuovo Cliente</a>
+            </div>*@
+    </div>
+    <br />
+    <div class="container">
+        <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="+mUGypM4FnlVWp2eor2EUTvbyxL1T76Hgtzf+2TjqLP36l+4I8ua3NgPWkBXZm0pjsskI3dHO5PZFsxQRqzNx/Ezhgp9FsyiV+5rPgxtLohejWbHnuyZ9ing6GAG/4IYudiD2/SlPRU8xQjdETTJEXeht3c6bp75W7pwiFIl7IjSBR+leyHNIqP2AB/8RwTmhpvnMWKTerJppCD/niiKOw==">
+        </div>
+
+        <div class="aspNetHidden">
+
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="3F851BDE">
+        </div>
+        <div class="row">
+            <div class="col-lg-4 ">
+                <div class="input-group ">
+                    <input type="text" id="icustomer-inline-search" name="inline_search_term" class="form-control" value="" placeholder="Search..." aria-label="" aria-describedby="basic-addon2">
+                    <span class=" input-group-btn">
+                        <button type="submit" value="search" name="customer-inline-search" id="customer-inline-search" class="btn btn-default" title="Ricerca veloce su: Cliente, P.Iva, E-Mail e Referente">
+                            <i class=" fa fa-search" aria-hidden="true"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <div class="col-lg-8 text-right">
+
+
+
+                <span>Totale elementi: 0</span>
+                <button type="button" class="btn btn-info" data-toggle="customer-search">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="btn btn-success" data-customerid="0" data-toggle="customer-edit">
+                    <i class="fa fa-plus-square" aria-hidden="true"></i>
+                </button>
+
+            </div>
+        </div>
+    </div>
+    <br />
+</head>
+<body>
+    <div class="row">
+        <div class="col-lg-12" style="margin-top: 20px;">
+            <div>
+
+            </div>
+        </div>
+
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Company)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Vatid)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Phone)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Contact)
+                    </th>
+                    <th>
+                        Prossima scadenza
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Company)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Vatid)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Phone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Contact)
+                        </td>
+                        <td>
+                            ...
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Customerid">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.Customerid">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Customerid">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+</body>
+</html>
+
+
+

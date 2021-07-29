@@ -1,0 +1,179 @@
+﻿@model ProvaConnessioneLicenze.Models.Customer
+
+@{
+    ViewData["Title"] = "Email";
+}
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Simple Data Table</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <style>
+
+        body {
+            color: #566787;
+            background: #f5f5f5;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .table-responsive {
+            margin: 30px 0;
+        }
+
+        .table-wrapper {
+            margin-left: 250px;
+            width: 600px;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 1px 1px rgba(0,0,0,.05);
+        }
+
+        .table-title {
+            padding-bottom: 10px;
+            margin: 0 0 10px;
+        }
+
+            .table-title h2 {
+                margin: 8px 0 0;
+                font-size: 22px;
+            }
+
+
+        .pagination {
+            float: right;
+            margin: 0 0 5px;
+        }
+
+            .pagination li a {
+                border: none;
+                font-size: 95%;
+                width: 30px;
+                height: 30px;
+                color: #999;
+                margin: 0 2px;
+                line-height: 30px;
+                border-radius: 30px !important;
+                text-align: center;
+                padding: 0;
+            }
+
+                .pagination li a:hover {
+                    color: #666;
+                }
+
+            .pagination li.active a {
+                background: #03A9F4;
+            }
+
+                .pagination li.active a:hover {
+                    background: #0397d6;
+                }
+
+            .pagination li.disabled i {
+                color: #ccc;
+            }
+
+            .pagination li i {
+                font-size: 16px;
+                padding-top: 6px
+            }
+
+        .hint-text {
+            float: left;
+            margin-top: 6px;
+            font-size: 95%;
+        }
+
+        #table1 th {
+            width: 120px;
+            height: 30px;
+        }
+
+        #table1 td {
+            width: 420px;
+            height: 30px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="table-responsive">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-lg-12 text-center "><h2><b>INVIA EMAIL LICENZE</b></h2></div>
+                    </div>
+                </div>
+                <div>
+                    <hr />
+                    <div class="col-lg-12 text-center "><h4>Vuoi inviare una e-mail a <b>@Model.Company.ToUpper()</b> ?</h4><br /><br /></div>
+                    <br /><br />
+
+                    @if (ViewBag.Message != null)
+                    {
+                        <br />
+                        <div id="alert" class="alert alert-danger alert-dismissible" role="alert" style="width:520px; height:55px">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            @ViewBag.Message
+                        </div>
+                        <br />
+                    }
+
+                <form asp-action="Email">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Customerid" />
+
+                    <div style="font-size:15px">
+                        <label>Conferma E-mail</label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <br />
+                    <div>
+                        <a href="~/document/TXT/@Model.FileTxtEngine.CreateFileLicense().Name" target="_blank">Salva File Licenze</a>
+                        <br /><br />
+                        <a href="~/document/PDF/@Model.pdfEngine.CreatePdfLicense()" target="_blank">Salva Pdf Licenze</a>
+                    </div>
+                    
+                    <br /><hr /><br />
+                    <div class="form-group text-center">
+                        <input type="submit" value="Invia E-mail" class="btn btn-primary" />
+                    </div>
+                    <div class="form-group text-center">
+                        <a asp-action="Index" type="button" class="btn btn-success" data-customerid="0" data-toggle="customer-edit">
+                            Torna alla lista
+                        </a>
+                    </div>
+                </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+@section Scripts {
+
+    <script>
+            window.setTimeout(function () {
+                $("#alert").fadeTo(500, 0).slideUp(500, function () {
+                    $(this).remove();
+                });
+            }, 2000);
+    </script>
+
+}

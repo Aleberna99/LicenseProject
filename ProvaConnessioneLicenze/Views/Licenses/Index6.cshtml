@@ -1,0 +1,73 @@
+﻿@model IEnumerable<ProvaConnessioneLicenze.Models.LicenseExt>
+
+@{
+    ViewData["Title"] = "Index6";
+}
+
+<h1>Index6</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Activationcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duedate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Producttitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Locked)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Activationcode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duedate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Producttitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Company)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Locked)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Activationcode">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Activationcode">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Activationcode">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

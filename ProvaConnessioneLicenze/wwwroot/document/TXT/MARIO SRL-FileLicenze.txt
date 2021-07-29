@@ -1,0 +1,21 @@
+LICENZE ImporterONE
+
+Intestatario: IMPRIMIS Srl
+Mail: info@imprimis.it
+P.IVA: 02026020426
+
+UTENZE
+
+Tipo Licenza : Standard
+Codice Attivazione : 28069-MD5QB-AHSO4-4VEHN-6R7GD-767Q7
+Username : IMP-0151
+Data Scadenza : 08/10/2021 00:00:00
+--------------------------------------------------------------------------
+
+Tipo Licenza : Free
+Codice Attivazione : 7KVB6-RMYPE-TNMYZ-C79J9-2AVMG-FLGUB
+Username : prova2
+Data Scadenza : 01/01/0001 00:00:00
+--------------------------------------------------------------------------
+
+Vai su https://app.importerone.it

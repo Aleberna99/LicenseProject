@@ -1,0 +1,84 @@
+﻿@model IEnumerable<ProvaConnessioneLicenze.Models.License>
+
+@{
+    ViewData["Title"] = "Index4";
+}
+
+<h1>Index4</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table" id="prova">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Customerid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resellerid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activationdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duedate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Locked)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Licensetype)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customerid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Resellerid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Activationdate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duedate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Locked)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Licensetype)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Activationcode">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Activationcode">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Activationcode">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts{
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/af-2.3.7/datatables.min.css" />
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.25/af-2.3.7/datatables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#prova').DataTable();
+        });
+    </script>
+}
